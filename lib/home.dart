@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_web_libraries_in_flutter
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:html' as html;
@@ -39,7 +41,16 @@ class Home extends StatelessWidget {
                   debugPrint(result.docs[0].data()['nama'].toString());
                   debugPrint(result.docs[0].data()['umur'].toString());
                 },
-                child: const Text('READ'),
+                child: const Text('READ COLLECTION'),
+              ),
+              const SizedBox(height: 10),
+              OutlinedButton(
+                onPressed: () async {
+                  final result = await FirebaseFirestore.instance.collection('coba').doc('aaa').get();
+                  debugPrint(result.id.toString());
+                  debugPrint(result.data().toString());
+                },
+                child: const Text('READ DOCUMENT'),
               ),
               const SizedBox(height: 10),
               OutlinedButton(
