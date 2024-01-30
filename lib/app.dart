@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rievalda_prefb/home.dart';
+import 'package:rievalda_prefb/screens/user_list.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         brightness: Brightness.dark,
       ),
-      home: const Home(),
+      home: const UserList(),
     );
   }
 }
